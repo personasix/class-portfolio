@@ -1,0 +1,158 @@
+:root {
+    --pink: #ffb8d1;
+    --cyan: #9cf6f6;
+    --cream: #fff9f3;
+    --dark: #24212b;
+    --purple: #594a68;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--dark);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: var(--pink);
+    border-bottom: 4px solid var(--dark);
+    padding: 15px;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav u1 {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    color: var(--dark);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: var(--cyan);
+    padding: 5px;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    border: 3px solid var(--dark);
+    margin-bottom: 40px;
+    padding: 25px;
+
+    box-shadow: 8px 8px 0 var(--cyan);
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+h2 {
+    background-color: var(--pink);
+    border: 3px solid var(--dark);
+
+    display: inline-block;
+
+    padding: 8px 15px;
+    margin-top: 0;
+
+    text-transform: uppercase;
+
+    box-shadow: 4px 4px 0 var(--dark);
+
+    transform: rotate(-1deg);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+article {
+    background-color: var(--cream);
+    border: 2px solid var(--dark);
+
+    margin: 25px 0;
+    padding: 20px;
+}
+
+article a {
+    color: var(--purple);
+}
+
+article img {
+    max-width: 90%;
+    height: auto;
+
+    border: 3px solid var(--dark);
+
+    box-shadow: 6px 6px 0 var(--pink);
+}
+
+details {
+    background-color: var(--cyan);
+    border: 2px solid var(--dark);
+
+    margin-top: 20px;
+    padding: 12px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#about {
+    box-shadow: 8px 8px 0 var(--pink);
+}
+
+#projects {
+    box-shadow: 8px 8px 0 var(--cyan);
+}
+
+#contact {
+    background-color: var(--pink);
+}
+
+address {
+    font-style: normal;
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--cream);
+
+    padding: 20px;
+
+    text-align: center;
+}
