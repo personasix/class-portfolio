@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Zachary Laza">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Zachary Laza</title>
     <meta name="description" content="This is Zachary Laza's portfolio: an MSU Information Science student interested in UX research, content strategy, and digital media.">
 </head>
@@ -17,6 +19,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" type="button" aria-pressed="false" hidden>Switch to dark mode</button>
         </nav>
     </header>
     <main>
@@ -31,7 +34,7 @@
         </section>
         <section id="projects">
             <h2>Projects</h2>
-            <article>
+            <article class="project-card">
                 <h3>Zack Junbae YouTube Channel</h3>
                 <a href="https://www.youtube.com/@zackjunbae" target="_blank"><img src="images/collage.png" alt="youtube-channel" width="350"></a>
                 <p>My own personal YouTube channel where I make videos applying my skills developed from my classes to best reach my intended audience.</p>
@@ -42,11 +45,29 @@
                     </p>
                 </details>
             </article>
-            <article>
+            <article class="project-card">
                 <h3>MI 301 Marketing Project Boba Proteain</h3>
                 <img src="images/bobaproteain.png" alt="boba-proteain-logo" width="300">
                 <p>A business project about using social media to best market your company</p>
             </article>
+        </section>
+        <section id="video">
+            <h2>Featured Video</h2>
+            <h3>MARTY SUPREME VS LUCIA</h3>
+            <p>A video highlighting the struggle and triumph against Nintendo Switch Sports Resort's Biggest Cheater</p>
+            <div class="video-frame">
+                <!-- Change the video ID in this embed URL to feature a different video. -->
+                <iframe
+                    src="https://www.youtube.com/embed/iQftgHj2QNs"
+                    title="Featured video from Zachary Laza's YouTube channel"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <!-- The channel URL below is the one already used by the existing portfolio project. -->
+            <p><a href="https://www.youtube.com/@zackjunbae" target="_blank" rel="noopener noreferrer">Visit my YouTube channel</a></p>
         </section>
         <section id="contact">
             <h2>Contact</h2>

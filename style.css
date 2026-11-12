@@ -4,6 +4,46 @@
     --cream: #fff9f3;
     --dark: #24212b;
     --purple: #594a68;
+    --page-bg: var(--cream);
+    --text-color: var(--dark);
+    --surface-color: #fff;
+    --card-color: var(--cream);
+    --border-color: var(--dark);
+    --link-color: var(--purple);
+    --button-bg: var(--cyan);
+    --button-text: var(--dark);
+    --focus-color: var(--purple);
+    --footer-bg: var(--dark);
+    --footer-text: var(--cream);
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    --page-bg: var(--dark);
+    --text-color: var(--cream);
+    --surface-color: #302c38;
+    --card-color: #383342;
+    --border-color: var(--cream);
+    --link-color: var(--cyan);
+    --focus-color: var(--cyan);
+    --footer-bg: var(--cream);
+    --footer-text: var(--dark);
+    color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+        --page-bg: var(--dark);
+        --text-color: var(--cream);
+        --surface-color: #302c38;
+        --card-color: #383342;
+        --border-color: var(--cream);
+        --link-color: var(--cyan);
+        --focus-color: var(--cyan);
+        --footer-bg: var(--cream);
+        --footer-text: var(--dark);
+        color-scheme: dark;
+    }
 }
 
 * {
@@ -11,8 +51,8 @@
 }
 
 body {
-    background-color: var(--cream);
-    color: var(--dark);
+    background-color: var(--page-bg);
+    color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
@@ -21,7 +61,8 @@ Using only my CSS file and without modifying my HTML, help me make my portfolio 
 
 header {
     background-color: var(--pink);
-    border-bottom: 4px solid var(--dark);
+    border-bottom: 4px solid var(--border-color);
+    color: var(--dark);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,6 +78,10 @@ header img {
 
 nav {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 nav ul {
@@ -66,6 +111,31 @@ nav a:hover {
     padding: 5px;
 }
 
+.theme-toggle {
+    background-color: var(--button-bg);
+    border: 2px solid var(--dark);
+    color: var(--button-text);
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+.theme-toggle[hidden] {
+    display: none;
+}
+
+.theme-toggle:hover {
+    background-color: var(--cream);
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
 main {
     max-width: 900px;
     margin: 30px auto;
@@ -73,8 +143,8 @@ main {
 }
 
 section {
-    background-color: white;
-    border: 3px solid var(--dark);
+    background-color: var(--surface-color);
+    border: 3px solid var(--border-color);
     margin-bottom: 40px;
     padding: 25px;
 
@@ -90,7 +160,8 @@ h1 {
 
 h2 {
     background-color: var(--pink);
-    border: 3px solid var(--dark);
+    border: 3px solid var(--border-color);
+    color: var(--dark);
 
     display: inline-block;
 
@@ -99,7 +170,7 @@ h2 {
 
     text-transform: uppercase;
 
-    box-shadow: 4px 4px 0 var(--dark);
+    box-shadow: 4px 4px 0 var(--border-color);
 
     transform: rotate(-1deg);
 }
@@ -113,28 +184,29 @@ p {
 }
 
 article {
-    background-color: var(--cream);
-    border: 2px solid var(--dark);
+    background-color: var(--card-color);
+    border: 2px solid var(--border-color);
     margin: 0;
     padding: 20px;
 }
 
 article a {
-    color: var(--purple);
+    color: var(--link-color);
 }
 
 article img {
     max-width: 100%;
     height: auto;
 
-    border: 3px solid var(--dark);
+    border: 3px solid var(--border-color);
 
     box-shadow: 6px 6px 0 var(--pink);
 }
 
 details {
     background-color: var(--cyan);
-    border: 2px solid var(--dark);
+    border: 2px solid var(--border-color);
+    color: var(--dark);
 
     margin-top: 20px;
     padding: 12px;
@@ -164,7 +236,20 @@ summary {
 }
 
 #contact {
-    background-color: var(--cream);
+    background-color: var(--page-bg);
+}
+
+.video-frame {
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--border-color);
+    width: 100%;
+}
+
+.video-frame iframe {
+    border: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 
 address {
@@ -172,8 +257,8 @@ address {
 }
 
 footer {
-    background-color: var(--dark);
-    color: var(--cream);
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
 
     padding: 20px;
 
@@ -189,6 +274,7 @@ footer {
 
     nav {
         width: auto;
+        flex-direction: row;
     }
 
     nav ul {
@@ -203,6 +289,7 @@ footer {
     main {
         padding: 25px;
     }
+}
 
 @media (min-width: 900px) {
     main {
@@ -231,5 +318,4 @@ footer {
         padding-left: 30px;
         padding-right: 30px;
     }
-}
 }
